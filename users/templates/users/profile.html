@@ -1,0 +1,16 @@
+{% extends "food/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1>{{ user.username }}'s Profile</h1>
+    <div>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button class="btn btn-primary" type="submit">Upload Image</button>
+        </form>
+        {% if analysis_result %}
+            <h3>Analysis Result:</h3>
+            <p>{{ analysis_result }}</p>
+        {% endif %}
+    </div>
+{% endblock %}
