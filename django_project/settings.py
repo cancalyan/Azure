@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(!gq7h7oqb0vi)2a4-o-(^f&&r^wnx#-%=n50icpg(@-#l&%bz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['foodconditionapp.azurewebsites.net', 'localhost', '127.0.0.1']
 
 
 # Application definition
