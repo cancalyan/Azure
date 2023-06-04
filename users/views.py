@@ -30,10 +30,12 @@ def profile(request):
                 'Prediction-Key': '8ee198d954d64cd1bf84138c0054cd17',
                 'Content-Type': 'application/octet-stream'
             }
+            image_data = image.read()  # Read the image data here
+
             response = requests.post(
                 'https://foodprediction-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/455e7c4f-3111-43ca-91e5-45cdb1f75c47/classify/iterations/Iteration1/image',
                 headers=headers,
-                data=image.read(),
+                data=image_data,  # Pass the image data here
             )
 
             if response.status_code != 200:

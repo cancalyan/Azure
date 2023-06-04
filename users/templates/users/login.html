@@ -1,5 +1,4 @@
 {% extends "food/base.html" %}
-{% load widget_tweaks %}
 
 {% block content %}
 <div class="content-section">
@@ -10,7 +9,7 @@
             {% for field in form %}
             <div class="form-group">
                 <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                {% render_field field class="form-control" %}
+                <input type="{{ field.field.widget.input_type }}" name="{{ field.name }}" class="form-control" id="{{ field.auto_id }}" {% if field.field.required %} required {% endif %}>
                 {% if field.help_text %}
                 <small class="form-text text-muted">{{ field.help_text }}</small>
                 {% endif %}
