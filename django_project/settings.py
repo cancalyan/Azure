@@ -53,7 +53,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'django_project.urls'
-
+CSRF_TRUSTED_ORIGINS = ['http://foodselection.azurewebsites.net', 'https://foodselection.azurewebsites.net']
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
